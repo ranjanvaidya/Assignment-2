@@ -1,0 +1,7 @@
+setwd("~/4-Exploratory_Data_Analysis")
+emmissions_data <- readRDS("C:/Users/Ranjan/Coursera-Exploratory Data Analysis/summarySCC_PM25.rds")
+codebook <- readRDS("C:/Users/Ranjan/Coursera-Exploratory Data Analysis/Source_Classification_Code.rds")
+total_emmissions<-tapply(emmissions_data$Emissions, INDEX=emmissions_data$year, sum)
+barplot(total_emmissions, main = "Total Emissions by Year", xlab="Year", ylab="Emissions")
+library("dplyr")
+png(filename = "C:/Users/Ranjan/Documents/week4-assignment/plot1.png", width = 480, height = 480, units = "px")

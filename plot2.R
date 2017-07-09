@@ -1,0 +1,6 @@
+emmissions_data <- readRDS("C:/Users/Ranjan/Documents/week4-assignment/summarySCC_PM25.rds")
+baltimore_emmissions <- subset(emmissions_data, fips == "24510")
+balitimore_yearwise <- tapply(baltimore_emmissions$Emissions, baltimore_emmissions$year, sum)
+barplot(balitimore_yearwise, xlab = "Year", ylab = "Total Emission (ton)", main = "Total Emission per year in Baltimore")
+library("dplyr")
+png(filename = "C:/Users/Ranjan/Documents/week4-assignment/plot2.png", width = 446, height = 456, units = "px")
